@@ -319,7 +319,7 @@ class GceAssertionCredentials(gce.AppAssertionCredentials):
         """
         # Credentials metadata dict.
         creds = {'scopes': sorted(list(scopes)),
-                 'svc_acct_name': self.__service_account_name.decode('utf-8')}
+                 'svc_acct_name': self.__service_account_name.encode('utf-8')}
         creds_str = json.dumps(creds)
         cache_file = _MultiProcessCacheFile(cache_filename)
         try:
