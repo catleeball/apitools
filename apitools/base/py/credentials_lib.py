@@ -321,7 +321,7 @@ class GceAssertionCredentials(gce.AppAssertionCredentials):
         """
         # Credentials metadata dict.
         scopes = sorted([six.ensure_text(scope) for scope in scopes])
-        creds = {'scopes': scopes),
+        creds = {'scopes': list(scopes)),
                  'svc_acct_name': self.__service_account_name}
         creds_str = json.dumps(creds)
         cache_file = _MultiProcessCacheFile(cache_filename)
