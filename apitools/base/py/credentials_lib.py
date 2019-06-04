@@ -320,7 +320,7 @@ class GceAssertionCredentials(gce.AppAssertionCredentials):
         # Credentials metadata dict.
         creds = {'scopes': sorted(list(scopes)),
                  'svc_acct_name': self.__service_account_name}
-        creds_str = json.dumps(creds)
+        creds_str = json.dumps(creds.decode('utf-8'))
         cache_file = _MultiProcessCacheFile(cache_filename)
         try:
             cache_file.LockedWrite(creds_str)
