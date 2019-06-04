@@ -352,7 +352,7 @@ class GceAssertionCredentials(gce.AppAssertionCredentials):
     def GetServiceAccount(self, account):
         relative_url = 'instance/service-accounts'
         response = _GceMetadataRequest(relative_url)
-        response_lines = [line.rstrip('/\n\r')
+        response_lines = [line.rstrip()
                           for line in response.readlines()]
         return account in response_lines
 
