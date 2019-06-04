@@ -15,6 +15,7 @@
 # limitations under the License.
 
 """Common credentials classes and constructors."""
+from __future__ import unicode_literals
 from __future__ import print_function
 
 import contextlib
